@@ -1,0 +1,4 @@
+option('windowing_backend', type: 'combo',
+    choices: ['x11', 'wayland', 'win32', 'cocoa'],
+    description: 'windowing backend to use',
+    value: 'x11')
