@@ -1,5 +1,6 @@
-project('gc', 'c', version: '7.6.8',
-    meson_version: '>=0.47.0')
+project('bdwgc', 'c', version: '7.6.8',
+	meson_version: '>=0.47.0',
+    license: 'custom')
 
 
 i = include_directories('include')
@@ -28,20 +29,12 @@ gc_src = files(
 )
 gc_deps = []
 defs = []
-if get_option('enable_threads')
-    gc_deps += dependency('threads')
-    error('threads not implemented')
-endif
-if get_option('enable_parallel_mark')
-    defs += ['-DPARALLEL_MARK']
-    error('parallel mark not implemented')
-endif
 gclib = library('gc', gc_src,
     dependencies: gc_deps,
     c_args: defs,
     include_directories: i)
 
-gc_dep = declare_dependency(
+bdwgc_dep = declare_dependency(
     include_directories: i,
     link_with: gclib
 )

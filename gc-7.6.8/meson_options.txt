@@ -1,8 +1,0 @@
-option('enable_threads', type: 'boolean', value: false,
-    description: 'Enable the use of threads')
-
-option('enable_parallel_mark', type: 'boolean',
-    value: false, description: 'Parallelize marking and free list construction')
-
-option('enable_cplusplus', type: 'boolean', value: false,
-    description: 'install c++ support')
